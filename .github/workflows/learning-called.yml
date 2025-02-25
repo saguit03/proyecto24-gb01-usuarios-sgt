@@ -40,12 +40,15 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-      
-      # - name: Revertir el último commit fallido
-      #   run: |
-      #     git fetch origin actions
-      #     git checkout actions
-      #     git reset --hard HEAD~1
-      
-      #     git push origin actions
+          
+      - name: Asegurar que hay historial de commits
+        run: |
+          git fetch --unshallow || echo "Repo ya tiene historial completo"
+
+      - name: Revertir el último commit fallido
+        run: |
+          git fetch origin actions
+          git checkout actions
+          git reset --hard HEAD~1
+          git push origin actions
     
