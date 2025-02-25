@@ -1,5 +1,3 @@
-name: CALLER
-
 on:
   push:
   pull_request:
