@@ -21,7 +21,7 @@ public class ContentController {
     
     @Autowired
     public ContentController(ContentsClient contentsClient) {
-        this.contentsClient = contentsClient;
+        this.contentsClient = contentsClient
     }
 
     @GetMapping("/movies/{idMovie}")
