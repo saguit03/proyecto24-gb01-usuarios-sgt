@@ -40,7 +40,7 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          
+
       - name: Asegurar que hay historial de commits
         run: |
           git fetch --unshallow || echo "Repo ya tiene historial completo"
@@ -50,5 +50,5 @@ jobs:
           git fetch origin actions
           git checkout actions
           git reset --hard HEAD~1
-          git push origin actions
+          git push --force origin actions 
     
