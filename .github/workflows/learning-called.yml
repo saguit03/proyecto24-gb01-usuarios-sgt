@@ -41,10 +41,10 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
       
-      - name: Revertir el último commit fallido
-        run: |
-          git fetch origin actions
-          git checkout actions
-          git reset --hard HEAD~1
-          git push origin actions
+      # - name: Revertir el último commit fallido
+      #   run: |
+      #     git fetch origin actions
+      #     git checkout actions
+      #     git reset --hard HEAD~1
+      #     git push origin actions
     
