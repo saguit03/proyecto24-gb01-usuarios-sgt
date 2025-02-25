@@ -1,4 +1,4 @@
-name: deploy-workflow
+name: Escalable
 
 on:
     workflow_dispatch:
@@ -20,9 +20,7 @@ env:
 
 jobs:
     deploy:
-        runs-on: ubuntu-latest
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        environment: ${{ fromJson(env.ENVIRONMENTS)[github.event.workflow.name] }}  # Obtiene el entorno correcto dinámicamente
         uses: saguit03/proyecto24-gb01-usuarios-sgt/.github/workflows/learning-called.yml@actions
         with:
             env-type: ${{ fromJson(env.ENVIRONMENTS)[github.event.workflow.name] }}
