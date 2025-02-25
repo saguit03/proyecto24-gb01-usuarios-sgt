@@ -1,0 +1,11 @@
+services:
+  usuarios:
+    build: .
+    ports:
+      - "8081:8081"
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
