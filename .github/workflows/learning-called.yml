@@ -43,8 +43,8 @@ jobs:
       
       - name: Revertir el último commit fallido
         run: |
-          git fetch origin main  # Asegura que tienes el historial actualizado
-          git checkout main
+          git fetch origin actions
+          git checkout actions
           git revert HEAD --no-edit
           git push origin main
     
