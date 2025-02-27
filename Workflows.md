@@ -428,6 +428,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    # Etc.
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
