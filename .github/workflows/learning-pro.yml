@@ -14,9 +14,9 @@ jobs:
       env-type: 'production'
 
   on-failure:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     environment: 'production'
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - run: echo 'The triggering workflow failed'
       - run: exit 1
